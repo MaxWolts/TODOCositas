@@ -1,0 +1,11 @@
+.Title-container {
+    margin-top: 3rem;
+    background-color: white;
+    border-radius: 1rem;
+    width: 160px;
+    height: 103px;
+}
+.Title {
+    font-size: 4rem;
+    text-align: center;
+}

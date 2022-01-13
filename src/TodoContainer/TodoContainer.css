@@ -1,0 +1,7 @@
+.TodoContainer {
+    display: grid;
+    justify-items: center;
+    border-radius: 19px;
+    margin: 0 2rem 5rem;
+    background-color: var(--gray-blue);
+}
