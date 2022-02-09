@@ -29,7 +29,4 @@ body {
   justify-items: center;
   gap: 3rem;
   margin: 0 24px;
-  min-height: 100vh;
-  min-width: 100vw;
-  background: var(--blue);
 }

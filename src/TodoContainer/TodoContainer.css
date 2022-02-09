@@ -3,5 +3,13 @@
     justify-items: center;
     border-radius: 19px;
     margin: 0 2rem 5rem;
+}
+.backgroundContainer-blue{
     background-color: var(--gray-blue);
+}
+.backgroundContainer-pink{
+    background-color: var(--gray-pink);
+}
+.backgroundContainer-yellow{
+    background-color: var(--gray-yellow);
 }

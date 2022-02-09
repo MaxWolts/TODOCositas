@@ -5,7 +5,7 @@ import './Title.css'
 function Title() {
     return (
         <div className='Title-container'>
-            <h1 className='Title' >ToDo Cositas</h1>
+            <h1 className='Title' >TODO Cositas</h1>
         </div>
     )
 }

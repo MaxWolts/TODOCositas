@@ -35,14 +35,11 @@
   transition: all 0.5s;
 }
 .color-blue{
-  /* display: none; */
   background-color: var(--blue);
 }
 .color-pink{
-  /* display: none; */
   background-color: var(--pink);
 }
 .color-yellow{
-  /* display: none; */
   background-color: var(--yellow);
 }

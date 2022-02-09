@@ -1,30 +1,25 @@
 import React from 'react';
+import { TodoContext } from '../TodoContext'
 import './ColorButton.css';
 
 function ColorButton() {
-  let [color, setColor] = React.useState('blue')
-  const seeColors = (color) => {
-    setColor(color)
-    document.querySelector('#root').style.background =`var(--${color})`
-    document.querySelector('.TodoContainer').style.background = `var(--gray-${color})`
-    document.querySelector('.CreateTodoButton').firstChild.style.background = `var(--${color})`
-  }
+  const {colorValue, setColorValue} = React.useContext(TodoContext)
   return (
     <div className='ColorButtonContainer' >
       <button 
-        className={`ColorButton color-${color}`}
-      ></button>
-      <button 
-        className="ColorButton color-blue"
-        onClick={ ()=> {seeColors('blue')} }
-      ></button>
-      <button 
-        className="ColorButton color-pink"
-        onClick={ ()=> {seeColors('pink')} }
+        className={`ColorButton color-${colorValue}`}
       ></button>
       <button 
         className="ColorButton color-yellow"
-        onClick={ ()=> {seeColors('yellow')}}
+        onClick={ ()=> {setColorValue('yellow')} }
+      ></button>
+      <button 
+        className="ColorButton color-pink"
+        onClick={ ()=> {setColorValue('pink')} }
+      ></button>
+      <button 
+        className="ColorButton  color-blue"
+        onClick={ ()=> {setColorValue('blue')}}
       ></button>
     </div>
   );

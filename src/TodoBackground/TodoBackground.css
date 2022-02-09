@@ -1,0 +1,17 @@
+.TodoBackground {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    gap: 3rem;
+    align-items: center;
+}
+.backgroundColor-blue {
+    background-color: var(--blue);
+}
+.backgroundColor-pink {
+    background-color: var(--pink);
+}
+.backgroundColor-yellow {
+    background-color: var(--yellow);
+}
