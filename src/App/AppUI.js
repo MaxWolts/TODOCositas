@@ -11,7 +11,10 @@ import { TodoContainer } from '../TodoContainer';
 import { Modal } from '../Modal'
 import './App.css';
 import { TodoForm } from "../TodoForm";
-import { TodoBackground } from "../TodoBackground"
+import { TodoBackground } from "../TodoBackground";
+import { TodosError } from '../TodosError';
+import { TodosLoading } from '../TodosLoading';
+import { EmptyTodos } from '../EmptyTodos';
 
 function AppUI() {
     const {error,
@@ -19,8 +22,6 @@ function AppUI() {
         searchedTodos,
         completeTodo,
         deleteTodo,
-        colorValue,
-        setColorValue,
         openModal,
         setOpenModal,
         flag,
@@ -34,9 +35,9 @@ function AppUI() {
         <TodoCounter/>
         <TodoSearch />
             <TodoList>
-                {error && <p> Desesperate, hubo un error </p>}
-                {loading && <p> Estamos cargando owo </p>}
-                {(!loading && !searchedTodos.length && flag===false) && <p> Crea tu primer todo </p>}
+                {error && <TodosError error={error}/>}
+                {loading && <TodosLoading/>}
+                {(!loading && !searchedTodos.length && flag===false) && <EmptyTodos/>}
                 {(!loading && flag === true && !searchedTodos.length) && <p> No hay resultados </p>}
                 {searchedTodos.map(todo => (
                 <TodoItem
