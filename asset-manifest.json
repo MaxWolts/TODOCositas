@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todocositas/static/css/main.67f944a0.css",
+    "main.js": "/todocositas/static/js/main.9c8cdee2.js",
+    "index.html": "/todocositas/index.html",
+    "main.67f944a0.css.map": "/todocositas/static/css/main.67f944a0.css.map",
+    "main.9c8cdee2.js.map": "/todocositas/static/js/main.9c8cdee2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67f944a0.css",
+    "static/js/main.9c8cdee2.js"
+  ]
+}
