@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/todocositas/static/css/main.67f944a0.css",
-    "main.js": "/todocositas/static/js/main.9c8cdee2.js",
+    "main.css": "/todocositas/static/css/main.dc41e71e.css",
+    "main.js": "/todocositas/static/js/main.ca5440db.js",
     "index.html": "/todocositas/index.html",
-    "main.67f944a0.css.map": "/todocositas/static/css/main.67f944a0.css.map",
-    "main.9c8cdee2.js.map": "/todocositas/static/js/main.9c8cdee2.js.map"
+    "main.dc41e71e.css.map": "/todocositas/static/css/main.dc41e71e.css.map",
+    "main.ca5440db.js.map": "/todocositas/static/js/main.ca5440db.js.map"
   },
   "entrypoints": [
-    "static/css/main.67f944a0.css",
-    "static/js/main.9c8cdee2.js"
+    "static/css/main.dc41e71e.css",
+    "static/js/main.ca5440db.js"
   ]
 }
