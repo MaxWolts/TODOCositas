@@ -1,12 +1,10 @@
 import React from 'react'
 import './TodoBackground.css'
-import { TodoContext } from '../TodoContext'
 
 
 function TodoBackground(props) {
-    const {colorValue} = React.useContext(TodoContext)
     return (
-        <section className={`TodoBackground backgroundColor-${colorValue}`}>
+        <section className={`TodoBackground backgroundColor-${props.colorValue}`}>
             {props.children}
         </section>
     )

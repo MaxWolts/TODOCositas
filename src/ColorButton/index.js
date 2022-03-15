@@ -1,9 +1,9 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext'
+
 import './ColorButton.css';
 
-function ColorButton() {
-  const {colorValue, setColorValue} = React.useContext(TodoContext)
+function ColorButton({colorValue, setColorValue}) {
+
   return (
     <div className='ColorButtonContainer' >
       <button 

@@ -3,7 +3,7 @@ import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = React.createContext()
 
-function TodoProvider (props) {
+function useTodos () {
   const {
       item: todos,
       saveItem: saveTodos,
@@ -64,26 +64,24 @@ function TodoProvider (props) {
     document.querySelector('.CreateTodoButton').firstChild.style.background = `var(--${color})`
   }
   return (
-      <TodoContext.Provider value={{
-          error,
-          loading,
-          totalTodos,
-          completedTodos,
-          searchValue,
-          setSearchValue,
-          searchedTodos,
-          addTodo,
-          completeTodo,
-          deleteTodo,
-          colorValue: color,
-          setColorValue: changeColor,
-          openModal,
-          setOpenModal,
-          flag
-      }}>
-          {props.children}
-      </TodoContext.Provider>
+    {
+      error,
+      loading,
+      totalTodos,
+      completedTodos,
+      searchValue,
+      setSearchValue,
+      searchedTodos,
+      addTodo,
+      completeTodo,
+      deleteTodo,
+      colorValue: color,
+      setColorValue: changeColor,
+      openModal,
+      setOpenModal,
+      flag
+    }
   )
 }
 
-export { TodoContext, TodoProvider }
+export { useTodos }

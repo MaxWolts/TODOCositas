@@ -1,9 +1,7 @@
 import React from 'react';
 import './CreateTodoButton.css';
-import { TodoContext } from '../TodoContext'
 
 function CreateTodoButton(props) {
-  const {colorValue} = React.useContext(TodoContext)
   const onClickButton = () => {
     props.setOpenModal(prevState => !prevState)
   }
@@ -13,7 +11,7 @@ function CreateTodoButton(props) {
       onClick={onClickButton}
     >
       <span 
-        className={`CreateTodoButton-color-${colorValue}`}
+        className={`CreateTodoButton-color-${props.colorValue}`}
       >+</span> 
     </button>
   );

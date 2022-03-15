@@ -1,11 +1,9 @@
 import React from 'react'
 import './TodoContainer.css'
-import { TodoContext } from '../TodoContext'
 
 function TodoContainer(props) {
-    const {colorValue} = React.useContext(TodoContext)
     return (
-        <div className={`TodoContainer backgroundContainer-${colorValue}`}>
+        <div className={`TodoContainer backgroundContainer-${props.colorValue}`}>
             {props.children}
         </div>
     )
