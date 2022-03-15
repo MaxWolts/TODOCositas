@@ -15,6 +15,7 @@ import { TodoBackground } from "../TodoBackground";
 import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
+import { TodoHeader } from '../TodoHeader';
 
 function AppUI() {
     const {error,
@@ -25,6 +26,10 @@ function AppUI() {
         openModal,
         setOpenModal,
         flag,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
     } = React.useContext(TodoContext);
     
     return (
@@ -32,8 +37,16 @@ function AppUI() {
         <Title/>
         <ColorButton/>
         <TodoContainer>
-        <TodoCounter/>
-        <TodoSearch />
+            <TodoHeader>
+                <TodoCounter
+                    totalTodos={totalTodos}
+                    completedTodos={completedTodos}
+                />
+                <TodoSearch
+                    searchValue={searchValue}
+                    setSearchValue={setSearchValue}
+                />
+            </TodoHeader>
             <TodoList>
                 {error && <TodosError error={error}/>}
                 {loading && <TodosLoading/>}
