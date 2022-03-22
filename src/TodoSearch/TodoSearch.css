@@ -8,7 +8,7 @@
   text-align: center;
   font-weight: 400;
   color: #1E1E1F;
-  border: none;
+  border: 1px solid #1E1E1F;
 }
   
 .TodoSearch::placeholder {
@@ -18,4 +18,8 @@
 
 .TodoSearch:focus {
   outline-color: #61DAFA;
+}
+
+.TodoSearch:disabled {
+  opacity: 25%;
 }

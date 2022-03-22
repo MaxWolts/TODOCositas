@@ -28,14 +28,13 @@ function App() {
     deleteTodo,
     openModal,
     setOpenModal,
-    flag,
     totalTodos,
     completedTodos,
     searchValue,
     setSearchValue,
     colorValue,
     addTodo,
-    setColorValue
+    setColorValue,
 } = useTodos();
 
 return (
@@ -47,39 +46,69 @@ return (
         colorValue={colorValue}
         setColorValue={setColorValue}
       />
-      <TodoContainer
-        colorValue={colorValue}
-      >
-          <TodoHeader>
-              <TodoCounter
-                  totalTodos={totalTodos}
-                  completedTodos={completedTodos}
-              />
-              <TodoSearch
-                  searchValue={searchValue}
-                  setSearchValue={setSearchValue}
-              />
-          </TodoHeader>
-          <TodoList>
-              {error && <TodosError error={error}/>}
-              {loading && <TodosLoading/>}
-              {(!loading && !searchedTodos.length && flag===false) && <EmptyTodos/>}
-              {(!loading && flag === true && !searchedTodos.length) && <p> No hay resultados </p>}
-              {searchedTodos.map(todo => (
-              <TodoItem
-                  key={todo.text}
-                  text={todo.text}
-                  completed={todo.completed}
-                  onComplete={()=> {
-                  completeTodo(todo.text)
-                  }}
-                  onDelete={()=> {
-                  deleteTodo(todo.text)
-                  }}
-              />
-              ))}
-          </TodoList>
-      </TodoContainer>
+        <TodoContainer
+        colorValue = { colorValue }
+        >
+            <TodoHeader
+                loading = { loading }
+            >
+                <TodoCounter
+                    totalTodos = { totalTodos }
+                    completedTodos = { completedTodos }
+                    
+                />
+                <TodoSearch
+                    searchValue = { searchValue }
+                    setSearchValue={ setSearchValue  }
+                    
+                />
+            </TodoHeader>
+
+            <TodoList
+                searchText = { searchValue }
+                totalTodos = { totalTodos }
+                error = { error }
+                loading = { loading }
+                searchedTodos = { searchedTodos }
+                onError = { ()=> <TodosError/> }
+                onLoading = { ()=> <TodosLoading/> }
+                onEmptyTodos = { ()=> <EmptyTodos/> }
+                onEmptySearchResults = { (searchText) => <p> No hay resultados para {searchText} </p>}
+                render = { todo => (
+                    <TodoItem
+                        key = { todo.text }
+                        text = { todo.text }
+                        completed = { todo.completed }
+                        onComplete={ ()=> {
+                        completeTodo(todo.text)
+                        }}
+                        onDelete = { () => {
+                        deleteTodo(todo.text)
+                        } }
+                    />
+                )}
+            />
+
+            {/* <TodoList>
+                {error && <TodosError error={error}/>}
+                {loading && <TodosLoading/>}
+                {(!loading && !searchedTodos.length && flag===false) && <EmptyTodos/>}
+                {(!loading && flag === true && !searchedTodos.length) && <p> No hay resultados </p>}
+                {searchedTodos.map(todo => (
+                <TodoItem
+                    key={todo.text}
+                    text={todo.text}
+                    completed={todo.completed}
+                    onComplete={()=> {
+                    completeTodo(todo.text)
+                    }}
+                    onDelete={()=> {
+                    deleteTodo(todo.text)
+                    }}
+                />
+                ))}
+            </TodoList> */}
+        </TodoContainer>
       {!!openModal && (
           <Modal>
               <TodoForm

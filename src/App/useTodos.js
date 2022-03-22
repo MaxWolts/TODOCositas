@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = React.createContext()
 
 function useTodos () {
   const {
@@ -16,7 +15,7 @@ function useTodos () {
     loading: loadingColor,
     error: errorColor,
   } = useLocalStorage('COLOR_VALUE', 'blue')
-  let flag = false
+
   const [searchValue, setSearchValue] = React.useState('')
   // const [color, setColor] = React.useState('blue')
   const [openModal, setOpenModal] = React.useState(false)
@@ -27,9 +26,9 @@ function useTodos () {
   let searchedTodos = [];
   if (!searchValue.length >= 1) {
     searchedTodos = todos
-    flag = false
+  
   } else {
-    flag = true
+  
     searchedTodos = todos.filter(todo => {
       const todoText = todo.text.toLowerCase()
       const searchText = searchValue.toLowerCase()
@@ -79,7 +78,6 @@ function useTodos () {
       setColorValue: changeColor,
       openModal,
       setOpenModal,
-      flag
     }
   )
 }
