@@ -16,7 +16,7 @@ import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoHeader } from '../TodoHeader';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert'
+import { ChangeAlert } from '../ChangeAlert'
 
 
 
@@ -105,7 +105,7 @@ return (
           setOpenModal={setOpenModal}
           colorValue={colorValue}
       />
-      <ChangeAlertWithStorageListener
+      <ChangeAlert
         sincronize={sincronizeTodos}
         colorValue={colorValue}
       />
