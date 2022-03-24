@@ -6,6 +6,7 @@ function useTodos () {
   const {
       item: todos,
       saveItem: saveTodos,
+      sincronizeItem: sincronizeTodos,
       loading,
       error,
     } = useLocalStorage('TODOS_V1', [])
@@ -17,7 +18,6 @@ function useTodos () {
   } = useLocalStorage('COLOR_VALUE', 'blue')
 
   const [searchValue, setSearchValue] = React.useState('')
-  // const [color, setColor] = React.useState('blue')
   const [openModal, setOpenModal] = React.useState(false)
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -78,6 +78,7 @@ function useTodos () {
       setColorValue: changeColor,
       openModal,
       setOpenModal,
+      sincronizeTodos,
     }
   )
 }

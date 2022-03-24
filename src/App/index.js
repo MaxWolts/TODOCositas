@@ -16,7 +16,7 @@ import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoHeader } from '../TodoHeader';
-
+import { ChangeAlertWithStorageListener } from '../ChangeAlert'
 
 
 
@@ -35,6 +35,7 @@ function App() {
     colorValue,
     addTodo,
     setColorValue,
+    sincronizeTodos,
 } = useTodos();
 
 return (
@@ -89,25 +90,6 @@ return (
                 )}
             />
 
-            {/* <TodoList>
-                {error && <TodosError error={error}/>}
-                {loading && <TodosLoading/>}
-                {(!loading && !searchedTodos.length && flag===false) && <EmptyTodos/>}
-                {(!loading && flag === true && !searchedTodos.length) && <p> No hay resultados </p>}
-                {searchedTodos.map(todo => (
-                <TodoItem
-                    key={todo.text}
-                    text={todo.text}
-                    completed={todo.completed}
-                    onComplete={()=> {
-                    completeTodo(todo.text)
-                    }}
-                    onDelete={()=> {
-                    deleteTodo(todo.text)
-                    }}
-                />
-                ))}
-            </TodoList> */}
         </TodoContainer>
       {!!openModal && (
           <Modal>
@@ -122,6 +104,10 @@ return (
           openModal={openModal}
           setOpenModal={setOpenModal}
           colorValue={colorValue}
+      />
+      <ChangeAlertWithStorageListener
+        sincronize={sincronizeTodos}
+        colorValue={colorValue}
       />
   </TodoBackground>
   )

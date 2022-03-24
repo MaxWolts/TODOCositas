@@ -47,7 +47,7 @@
 }
 
 .LoadingTodo-contaner{
-    background: linear-gradient(98deg, rgba(250, 250, 250,1), var(--blue));
+    background: linear-gradient(98deg, rgba(250, 250, 250,1), rgb(177, 177, 177));
     background-size: 400% 400%;
     animation: loadingAnimation 3s ease-in-out infinite;
 }
