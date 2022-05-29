@@ -62,23 +62,30 @@ function useTodos () {
     document.querySelector('.TodoContainer').style.background = `var(--gray-${color})`
     document.querySelector('.CreateTodoButton').firstChild.style.background = `var(--${color})`
   }
+  const states = {
+    error,
+    loading,
+    totalTodos,
+    completedTodos,
+    searchValue,
+    searchedTodos,
+    openModal,
+    colorValue: color,
+  }
+  const stateUpdaters = {
+    setSearchValue,
+    addTodo,
+    completeTodo,
+    deleteTodo,
+    setColorValue: changeColor,
+    setOpenModal,
+    sincronizeTodos,
+  }
+
   return (
     {
-      error,
-      loading,
-      totalTodos,
-      completedTodos,
-      searchValue,
-      setSearchValue,
-      searchedTodos,
-      addTodo,
-      completeTodo,
-      deleteTodo,
-      colorValue: color,
-      setColorValue: changeColor,
-      openModal,
-      setOpenModal,
-      sincronizeTodos,
+      states,
+      stateUpdaters
     }
   )
 }
